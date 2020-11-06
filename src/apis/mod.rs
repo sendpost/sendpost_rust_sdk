@@ -50,8 +50,6 @@ impl<T> From<serde_json::Error> for Error<T> {
 
 use super::models::*;
 
-mod accountalert_api;
-pub use self::accountalert_api::{ AccountalertApi, AccountalertApiClient };
 mod accountevent_api;
 pub use self::accountevent_api::{ AccounteventApi, AccounteventApiClient };
 mod accountintegration_api;
@@ -76,8 +74,6 @@ mod accountstat_api;
 pub use self::accountstat_api::{ AccountstatApi, AccountstatApiClient };
 mod accountsubaccount_api;
 pub use self::accountsubaccount_api::{ AccountsubaccountApi, AccountsubaccountApiClient };
-mod accountvalidate_api;
-pub use self::accountvalidate_api::{ AccountvalidateApi, AccountvalidateApiClient };
 mod accountvalidation_api;
 pub use self::accountvalidation_api::{ AccountvalidationApi, AccountvalidationApiClient };
 mod accountwebhook_api;

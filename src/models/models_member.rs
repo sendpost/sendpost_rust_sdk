@@ -22,8 +22,14 @@ pub struct ModelsMember {
   is_forbidden: Option<bool>,
   #[serde(rename = "IsVerified")]
   is_verified: Option<bool>,
+  #[serde(rename = "companyName")]
+  company_name: Option<String>,
   #[serde(rename = "created")]
-  created: Option<i64>
+  created: Option<i64>,
+  #[serde(rename = "name")]
+  name: Option<String>,
+  #[serde(rename = "phoneNumber")]
+  phone_number: Option<String>
 }
 
 impl ModelsMember {
@@ -33,7 +39,10 @@ impl ModelsMember {
       id: None,
       is_forbidden: None,
       is_verified: None,
-      created: None
+      company_name: None,
+      created: None,
+      name: None,
+      phone_number: None
     }
   }
 
@@ -105,6 +114,23 @@ impl ModelsMember {
     self.is_verified = None;
   }
 
+  pub fn set_company_name(&mut self, company_name: String) {
+    self.company_name = Some(company_name);
+  }
+
+  pub fn with_company_name(mut self, company_name: String) -> ModelsMember {
+    self.company_name = Some(company_name);
+    self
+  }
+
+  pub fn company_name(&self) -> Option<&String> {
+    self.company_name.as_ref()
+  }
+
+  pub fn reset_company_name(&mut self) {
+    self.company_name = None;
+  }
+
   pub fn set_created(&mut self, created: i64) {
     self.created = Some(created);
   }
@@ -120,6 +146,40 @@ impl ModelsMember {
 
   pub fn reset_created(&mut self) {
     self.created = None;
+  }
+
+  pub fn set_name(&mut self, name: String) {
+    self.name = Some(name);
+  }
+
+  pub fn with_name(mut self, name: String) -> ModelsMember {
+    self.name = Some(name);
+    self
+  }
+
+  pub fn name(&self) -> Option<&String> {
+    self.name.as_ref()
+  }
+
+  pub fn reset_name(&mut self) {
+    self.name = None;
+  }
+
+  pub fn set_phone_number(&mut self, phone_number: String) {
+    self.phone_number = Some(phone_number);
+  }
+
+  pub fn with_phone_number(mut self, phone_number: String) -> ModelsMember {
+    self.phone_number = Some(phone_number);
+    self
+  }
+
+  pub fn phone_number(&self) -> Option<&String> {
+    self.phone_number.as_ref()
+  }
+
+  pub fn reset_phone_number(&mut self) {
+    self.phone_number = None;
   }
 
 }

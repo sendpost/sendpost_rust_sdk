@@ -5,7 +5,6 @@ use super::configuration::Configuration;
 
 pub struct APIClient<C: hyper::client::Connect> {
   configuration: Rc<Configuration<C>>,
-  accountalert_api: Box<::apis::AccountalertApi>,
   accountevent_api: Box<::apis::AccounteventApi>,
   accountintegration_api: Box<::apis::AccountintegrationApi>,
   accountip_api: Box<::apis::AccountipApi>,
@@ -18,7 +17,6 @@ pub struct APIClient<C: hyper::client::Connect> {
   accountsmtpstat_api: Box<::apis::AccountsmtpstatApi>,
   accountstat_api: Box<::apis::AccountstatApi>,
   accountsubaccount_api: Box<::apis::AccountsubaccountApi>,
-  accountvalidate_api: Box<::apis::AccountvalidateApi>,
   accountvalidation_api: Box<::apis::AccountvalidationApi>,
   accountwebhook_api: Box<::apis::AccountwebhookApi>,
   smtp_api: Box<::apis::SmtpApi>,
@@ -36,7 +34,6 @@ impl<C: hyper::client::Connect> APIClient<C> {
 
     APIClient {
       configuration: rc.clone(),
-      accountalert_api: Box::new(::apis::AccountalertApiClient::new(rc.clone())),
       accountevent_api: Box::new(::apis::AccounteventApiClient::new(rc.clone())),
       accountintegration_api: Box::new(::apis::AccountintegrationApiClient::new(rc.clone())),
       accountip_api: Box::new(::apis::AccountipApiClient::new(rc.clone())),
@@ -49,7 +46,6 @@ impl<C: hyper::client::Connect> APIClient<C> {
       accountsmtpstat_api: Box::new(::apis::AccountsmtpstatApiClient::new(rc.clone())),
       accountstat_api: Box::new(::apis::AccountstatApiClient::new(rc.clone())),
       accountsubaccount_api: Box::new(::apis::AccountsubaccountApiClient::new(rc.clone())),
-      accountvalidate_api: Box::new(::apis::AccountvalidateApiClient::new(rc.clone())),
       accountvalidation_api: Box::new(::apis::AccountvalidationApiClient::new(rc.clone())),
       accountwebhook_api: Box::new(::apis::AccountwebhookApiClient::new(rc.clone())),
       smtp_api: Box::new(::apis::SmtpApiClient::new(rc.clone())),
@@ -60,10 +56,6 @@ impl<C: hyper::client::Connect> APIClient<C> {
       subaccountstat_api: Box::new(::apis::SubaccountstatApiClient::new(rc.clone())),
       subaccountsuppression_api: Box::new(::apis::SubaccountsuppressionApiClient::new(rc.clone())),
     }
-  }
-
-  pub fn accountalert_api(&self) -> &::apis::AccountalertApi{
-    self.accountalert_api.as_ref()
   }
 
   pub fn accountevent_api(&self) -> &::apis::AccounteventApi{
@@ -112,10 +104,6 @@ impl<C: hyper::client::Connect> APIClient<C> {
 
   pub fn accountsubaccount_api(&self) -> &::apis::AccountsubaccountApi{
     self.accountsubaccount_api.as_ref()
-  }
-
-  pub fn accountvalidate_api(&self) -> &::apis::AccountvalidateApi{
-    self.accountvalidate_api.as_ref()
   }
 
   pub fn accountvalidation_api(&self) -> &::apis::AccountvalidationApi{

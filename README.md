@@ -21,10 +21,6 @@ All URIs are relative to *https://api.sendpost.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountalertApi* | [**alert_router_count**](docs/AccountalertApi.md#alert_router_count) | **Get** /account/alert/count | 
-*AccountalertApi* | [**alert_router_create_alert**](docs/AccountalertApi.md#alert_router_create_alert) | **Post** /account/alert/ | 
-*AccountalertApi* | [**alert_router_get_all**](docs/AccountalertApi.md#alert_router_get_all) | **Get** /account/alert/ | 
-*AccountalertApi* | [**alert_router_update**](docs/AccountalertApi.md#alert_router_update) | **Put** /account/alert/{alertid} | 
 *AccounteventApi* | [**event_router_count_all_events_from_a_account_for_a_given_time_range**](docs/AccounteventApi.md#event_router_count_all_events_from_a_account_for_a_given_time_range) | **Get** /account/event/count | 
 *AccounteventApi* | [**event_router_count_all_events_from_a_node_of_a_sub_account_for_a_given_time_range**](docs/AccounteventApi.md#event_router_count_all_events_from_a_node_of_a_sub_account_for_a_given_time_range) | **Get** /account/event/node/count | 
 *AccounteventApi* | [**event_router_get**](docs/AccounteventApi.md#event_router_get) | **Get** /account/event/{eventId} | 
@@ -89,11 +85,11 @@ Class | Method | HTTP request | Description
 *AccountsubaccountApi* | [**sub_account_router_get**](docs/AccountsubaccountApi.md#sub_account_router_get) | **Get** /account/subaccount/{subAccountId} | 
 *AccountsubaccountApi* | [**sub_account_router_get_all**](docs/AccountsubaccountApi.md#sub_account_router_get_all) | **Get** /account/subaccount/ | 
 *AccountsubaccountApi* | [**sub_account_router_update**](docs/AccountsubaccountApi.md#sub_account_router_update) | **Put** /account/subaccount/{subAccountId} | 
-*AccountvalidateApi* | [**validate_router_validate_email_bulk**](docs/AccountvalidateApi.md#validate_router_validate_email_bulk) | **Post** /account/validate/bulk | 
-*AccountvalidateApi* | [**validate_router_validate_email_list**](docs/AccountvalidateApi.md#validate_router_validate_email_list) | **Post** /account/validate/ | 
+*AccountvalidationApi* | [**validate_router_validate_email_bulk**](docs/AccountvalidationApi.md#validate_router_validate_email_bulk) | **Post** /account/validation/bulk | 
 *AccountvalidationApi* | [**validation_router_count**](docs/AccountvalidationApi.md#validation_router_count) | **Get** /account/validation/count | 
 *AccountvalidationApi* | [**validation_router_delete_validation**](docs/AccountvalidationApi.md#validation_router_delete_validation) | **Delete** /account/validation/ | 
 *AccountvalidationApi* | [**validation_router_get_all**](docs/AccountvalidationApi.md#validation_router_get_all) | **Get** /account/validation/ | 
+*AccountvalidationApi* | [**validation_router_validate_email_list**](docs/AccountvalidationApi.md#validation_router_validate_email_list) | **Post** /account/validation/ | 
 *AccountwebhookApi* | [**account_webhook_router_count**](docs/AccountwebhookApi.md#account_webhook_router_count) | **Get** /account/webhook/count | 
 *AccountwebhookApi* | [**account_webhook_router_create**](docs/AccountwebhookApi.md#account_webhook_router_create) | **Post** /account/webhook/ | 
 *AccountwebhookApi* | [**account_webhook_router_create_account_webhook_in_account_webhook_cache**](docs/AccountwebhookApi.md#account_webhook_router_create_account_webhook_in_account_webhook_cache) | **Post** /account/webhook/cache | 
@@ -147,9 +143,9 @@ Class | Method | HTTP request | Description
  - [ModelsAccountWebhook](docs/ModelsAccountWebhook.md)
  - [ModelsAgStat](docs/ModelsAgStat.md)
  - [ModelsAipStat](docs/ModelsAipStat.md)
- - [ModelsAlert](docs/ModelsAlert.md)
  - [ModelsAlertLabel](docs/ModelsAlertLabel.md)
  - [ModelsAlertRequest](docs/ModelsAlertRequest.md)
+ - [ModelsAlertResponse](docs/ModelsAlertResponse.md)
  - [ModelsAuthInfo](docs/ModelsAuthInfo.md)
  - [ModelsBackOffConfiguration](docs/ModelsBackOffConfiguration.md)
  - [ModelsBackOffDecreaseType](docs/ModelsBackOffDecreaseType.md)
@@ -164,6 +160,7 @@ Class | Method | HTTP request | Description
  - [ModelsDnsRecord](docs/ModelsDnsRecord.md)
  - [ModelsDomain](docs/ModelsDomain.md)
  - [ModelsEAccount](docs/ModelsEAccount.md)
+ - [ModelsEAccountMember](docs/ModelsEAccountMember.md)
  - [ModelsEDomain](docs/ModelsEDomain.md)
  - [ModelsEIntegration](docs/ModelsEIntegration.md)
  - [ModelsEInvitation](docs/ModelsEInvitation.md)
@@ -200,7 +197,6 @@ Class | Method | HTTP request | Description
  - [ModelsMemberRole](docs/ModelsMemberRole.md)
  - [ModelsNotificationType](docs/ModelsNotificationType.md)
  - [ModelsPipStat](docs/ModelsPipStat.md)
- - [ModelsPriority](docs/ModelsPriority.md)
  - [ModelsQEmailMessage](docs/ModelsQEmailMessage.md)
  - [ModelsQEvent](docs/ModelsQEvent.md)
  - [ModelsRGlockappsMonitorStat](docs/ModelsRGlockappsMonitorStat.md)

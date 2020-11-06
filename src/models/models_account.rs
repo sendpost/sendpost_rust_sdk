@@ -18,14 +18,22 @@ pub struct ModelsAccount {
   api_key: Option<String>,
   #[serde(rename = "created")]
   created: Option<i64>,
+  #[serde(rename = "currentEmailServiceProvider")]
+  current_email_service_provider: Option<String>,
   #[serde(rename = "id")]
   id: Option<i64>,
+  #[serde(rename = "industry")]
+  industry: Option<String>,
   #[serde(rename = "lock_threshold")]
   lock_threshold: Option<i64>,
   #[serde(rename = "locked")]
   locked: Option<bool>,
   #[serde(rename = "name")]
   name: Option<String>,
+  #[serde(rename = "onboardQAnswered")]
+  onboard_q_answered: Option<bool>,
+  #[serde(rename = "sendingVolumePerMonth")]
+  sending_volume_per_month: Option<String>,
   #[serde(rename = "url")]
   url: Option<String>
 }
@@ -35,10 +43,14 @@ impl ModelsAccount {
     ModelsAccount {
       api_key: None,
       created: None,
+      current_email_service_provider: None,
       id: None,
+      industry: None,
       lock_threshold: None,
       locked: None,
       name: None,
+      onboard_q_answered: None,
+      sending_volume_per_month: None,
       url: None
     }
   }
@@ -77,6 +89,23 @@ impl ModelsAccount {
     self.created = None;
   }
 
+  pub fn set_current_email_service_provider(&mut self, current_email_service_provider: String) {
+    self.current_email_service_provider = Some(current_email_service_provider);
+  }
+
+  pub fn with_current_email_service_provider(mut self, current_email_service_provider: String) -> ModelsAccount {
+    self.current_email_service_provider = Some(current_email_service_provider);
+    self
+  }
+
+  pub fn current_email_service_provider(&self) -> Option<&String> {
+    self.current_email_service_provider.as_ref()
+  }
+
+  pub fn reset_current_email_service_provider(&mut self) {
+    self.current_email_service_provider = None;
+  }
+
   pub fn set_id(&mut self, id: i64) {
     self.id = Some(id);
   }
@@ -92,6 +121,23 @@ impl ModelsAccount {
 
   pub fn reset_id(&mut self) {
     self.id = None;
+  }
+
+  pub fn set_industry(&mut self, industry: String) {
+    self.industry = Some(industry);
+  }
+
+  pub fn with_industry(mut self, industry: String) -> ModelsAccount {
+    self.industry = Some(industry);
+    self
+  }
+
+  pub fn industry(&self) -> Option<&String> {
+    self.industry.as_ref()
+  }
+
+  pub fn reset_industry(&mut self) {
+    self.industry = None;
   }
 
   pub fn set_lock_threshold(&mut self, lock_threshold: i64) {
@@ -143,6 +189,40 @@ impl ModelsAccount {
 
   pub fn reset_name(&mut self) {
     self.name = None;
+  }
+
+  pub fn set_onboard_q_answered(&mut self, onboard_q_answered: bool) {
+    self.onboard_q_answered = Some(onboard_q_answered);
+  }
+
+  pub fn with_onboard_q_answered(mut self, onboard_q_answered: bool) -> ModelsAccount {
+    self.onboard_q_answered = Some(onboard_q_answered);
+    self
+  }
+
+  pub fn onboard_q_answered(&self) -> Option<&bool> {
+    self.onboard_q_answered.as_ref()
+  }
+
+  pub fn reset_onboard_q_answered(&mut self) {
+    self.onboard_q_answered = None;
+  }
+
+  pub fn set_sending_volume_per_month(&mut self, sending_volume_per_month: String) {
+    self.sending_volume_per_month = Some(sending_volume_per_month);
+  }
+
+  pub fn with_sending_volume_per_month(mut self, sending_volume_per_month: String) -> ModelsAccount {
+    self.sending_volume_per_month = Some(sending_volume_per_month);
+    self
+  }
+
+  pub fn sending_volume_per_month(&self) -> Option<&String> {
+    self.sending_volume_per_month.as_ref()
+  }
+
+  pub fn reset_sending_volume_per_month(&mut self) {
+    self.sending_volume_per_month = None;
   }
 
   pub fn set_url(&mut self, url: String) {
