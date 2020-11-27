@@ -20,8 +20,12 @@ pub struct ModelsEAccountMember {
   current_email_service_provider: Option<String>,
   #[serde(rename = "industry")]
   industry: Option<String>,
+  #[serde(rename = "logoURL")]
+  logo_url: Option<String>,
   #[serde(rename = "name")]
   name: Option<String>,
+  #[serde(rename = "onboardCFinished")]
+  onboard_c_finished: Option<bool>,
   #[serde(rename = "onboardQAnswered")]
   onboard_q_answered: Option<bool>,
   #[serde(rename = "phoneNumber")]
@@ -40,7 +44,9 @@ impl ModelsEAccountMember {
       company_name: None,
       current_email_service_provider: None,
       industry: None,
+      logo_url: None,
       name: None,
+      onboard_c_finished: None,
       onboard_q_answered: None,
       phone_number: None,
       sending_volume_per_month: None,
@@ -100,6 +106,23 @@ impl ModelsEAccountMember {
     self.industry = None;
   }
 
+  pub fn set_logo_url(&mut self, logo_url: String) {
+    self.logo_url = Some(logo_url);
+  }
+
+  pub fn with_logo_url(mut self, logo_url: String) -> ModelsEAccountMember {
+    self.logo_url = Some(logo_url);
+    self
+  }
+
+  pub fn logo_url(&self) -> Option<&String> {
+    self.logo_url.as_ref()
+  }
+
+  pub fn reset_logo_url(&mut self) {
+    self.logo_url = None;
+  }
+
   pub fn set_name(&mut self, name: String) {
     self.name = Some(name);
   }
@@ -115,6 +138,23 @@ impl ModelsEAccountMember {
 
   pub fn reset_name(&mut self) {
     self.name = None;
+  }
+
+  pub fn set_onboard_c_finished(&mut self, onboard_c_finished: bool) {
+    self.onboard_c_finished = Some(onboard_c_finished);
+  }
+
+  pub fn with_onboard_c_finished(mut self, onboard_c_finished: bool) -> ModelsEAccountMember {
+    self.onboard_c_finished = Some(onboard_c_finished);
+    self
+  }
+
+  pub fn onboard_c_finished(&self) -> Option<&bool> {
+    self.onboard_c_finished.as_ref()
+  }
+
+  pub fn reset_onboard_c_finished(&mut self) {
+    self.onboard_c_finished = None;
   }
 
   pub fn set_onboard_q_answered(&mut self, onboard_q_answered: bool) {

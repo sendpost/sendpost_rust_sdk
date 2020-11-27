@@ -32,6 +32,8 @@ pub struct ModelsEmailMessage {
   reply_to: Option<::models::ModelsReplyTo>,
   #[serde(rename = "subject")]
   subject: Option<String>,
+  #[serde(rename = "template")]
+  template: Option<String>,
   #[serde(rename = "textBody")]
   text_body: Option<String>,
   #[serde(rename = "to")]
@@ -54,6 +56,7 @@ impl ModelsEmailMessage {
       pre_text: None,
       reply_to: None,
       subject: None,
+      template: None,
       text_body: None,
       to: None,
       track_clicks: None,
@@ -212,6 +215,23 @@ impl ModelsEmailMessage {
 
   pub fn reset_subject(&mut self) {
     self.subject = None;
+  }
+
+  pub fn set_template(&mut self, template: String) {
+    self.template = Some(template);
+  }
+
+  pub fn with_template(mut self, template: String) -> ModelsEmailMessage {
+    self.template = Some(template);
+    self
+  }
+
+  pub fn template(&self) -> Option<&String> {
+    self.template.as_ref()
+  }
+
+  pub fn reset_template(&mut self) {
+    self.template = None;
   }
 
   pub fn set_text_body(&mut self, text_body: String) {

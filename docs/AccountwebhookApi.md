@@ -6,9 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account_webhook_router_count**](AccountwebhookApi.md#account_webhook_router_count) | **Get** /account/webhook/count | 
 [**account_webhook_router_create**](AccountwebhookApi.md#account_webhook_router_create) | **Post** /account/webhook/ | 
-[**account_webhook_router_create_account_webhook_in_account_webhook_cache**](AccountwebhookApi.md#account_webhook_router_create_account_webhook_in_account_webhook_cache) | **Post** /account/webhook/cache | 
 [**account_webhook_router_delete**](AccountwebhookApi.md#account_webhook_router_delete) | **Delete** /account/webhook/{webhookId} | 
-[**account_webhook_router_delete_account_webhook_in_account_webhook_cache**](AccountwebhookApi.md#account_webhook_router_delete_account_webhook_in_account_webhook_cache) | **Delete** /account/webhook/cache | 
 [**account_webhook_router_get**](AccountwebhookApi.md#account_webhook_router_get) | **Get** /account/webhook/{webhookId} | 
 [**account_webhook_router_get_all**](AccountwebhookApi.md#account_webhook_router_get_all) | **Get** /account/webhook/ | 
 [**account_webhook_router_update**](AccountwebhookApi.md#account_webhook_router_update) | **Put** /account/webhook/{webhookId} | 
@@ -69,33 +67,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **account_webhook_router_create_account_webhook_in_account_webhook_cache**
-> account_webhook_router_create_account_webhook_in_account_webhook_cache(body)
-
-
-Add Account Webhook To AccountWebhook Cache
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-  **body** | [**ModelsAccountWebhook**](ModelsAccountWebhook.md)| Add account webhook to cache | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **account_webhook_router_delete**
 > ::models::ModelsDeleteResponse account_webhook_router_delete(x_account_api_key, webhook_id)
 
@@ -112,33 +83,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::ModelsDeleteResponse**](models.DeleteResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **account_webhook_router_delete_account_webhook_in_account_webhook_cache**
-> account_webhook_router_delete_account_webhook_in_account_webhook_cache(body)
-
-
-Delete Account Webhook which is in AccountWebhook Cache
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-  **body** | [**ModelsAccountWebhook**](ModelsAccountWebhook.md)| AccountWebhook content | 
-
-### Return type
-
- (empty response body)
 
 ### Authorization
 

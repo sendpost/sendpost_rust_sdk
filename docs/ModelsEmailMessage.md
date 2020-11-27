@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **pre_text** | **String** |  | [optional] [default to null]
 **reply_to** | [***::models::ModelsReplyTo**](models.ReplyTo.md) |  | [optional] [default to null]
 **subject** | **String** |  | [optional] [default to null]
+**template** | **String** |  | [optional] [default to null]
 **text_body** | **String** |  | [optional] [default to null]
 **to** | [**Vec<::models::ModelsTo>**](models.To.md) |  | [optional] [default to null]
 **track_clicks** | **bool** |  | [optional] [default to null]

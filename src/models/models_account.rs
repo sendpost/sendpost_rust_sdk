@@ -24,12 +24,20 @@ pub struct ModelsAccount {
   id: Option<i64>,
   #[serde(rename = "industry")]
   industry: Option<String>,
-  #[serde(rename = "lock_threshold")]
+  #[serde(rename = "isCanceled")]
+  is_canceled: Option<bool>,
+  #[serde(rename = "isLastPaymentFailed")]
+  is_last_payment_failed: Option<bool>,
+  #[serde(rename = "isUpgraded")]
+  is_upgraded: Option<bool>,
+  #[serde(rename = "lockThreshold")]
   lock_threshold: Option<i64>,
   #[serde(rename = "locked")]
   locked: Option<bool>,
   #[serde(rename = "name")]
   name: Option<String>,
+  #[serde(rename = "onboardCFinished")]
+  onboard_c_finished: Option<bool>,
   #[serde(rename = "onboardQAnswered")]
   onboard_q_answered: Option<bool>,
   #[serde(rename = "sendingVolumePerMonth")]
@@ -46,9 +54,13 @@ impl ModelsAccount {
       current_email_service_provider: None,
       id: None,
       industry: None,
+      is_canceled: None,
+      is_last_payment_failed: None,
+      is_upgraded: None,
       lock_threshold: None,
       locked: None,
       name: None,
+      onboard_c_finished: None,
       onboard_q_answered: None,
       sending_volume_per_month: None,
       url: None
@@ -140,6 +152,57 @@ impl ModelsAccount {
     self.industry = None;
   }
 
+  pub fn set_is_canceled(&mut self, is_canceled: bool) {
+    self.is_canceled = Some(is_canceled);
+  }
+
+  pub fn with_is_canceled(mut self, is_canceled: bool) -> ModelsAccount {
+    self.is_canceled = Some(is_canceled);
+    self
+  }
+
+  pub fn is_canceled(&self) -> Option<&bool> {
+    self.is_canceled.as_ref()
+  }
+
+  pub fn reset_is_canceled(&mut self) {
+    self.is_canceled = None;
+  }
+
+  pub fn set_is_last_payment_failed(&mut self, is_last_payment_failed: bool) {
+    self.is_last_payment_failed = Some(is_last_payment_failed);
+  }
+
+  pub fn with_is_last_payment_failed(mut self, is_last_payment_failed: bool) -> ModelsAccount {
+    self.is_last_payment_failed = Some(is_last_payment_failed);
+    self
+  }
+
+  pub fn is_last_payment_failed(&self) -> Option<&bool> {
+    self.is_last_payment_failed.as_ref()
+  }
+
+  pub fn reset_is_last_payment_failed(&mut self) {
+    self.is_last_payment_failed = None;
+  }
+
+  pub fn set_is_upgraded(&mut self, is_upgraded: bool) {
+    self.is_upgraded = Some(is_upgraded);
+  }
+
+  pub fn with_is_upgraded(mut self, is_upgraded: bool) -> ModelsAccount {
+    self.is_upgraded = Some(is_upgraded);
+    self
+  }
+
+  pub fn is_upgraded(&self) -> Option<&bool> {
+    self.is_upgraded.as_ref()
+  }
+
+  pub fn reset_is_upgraded(&mut self) {
+    self.is_upgraded = None;
+  }
+
   pub fn set_lock_threshold(&mut self, lock_threshold: i64) {
     self.lock_threshold = Some(lock_threshold);
   }
@@ -189,6 +252,23 @@ impl ModelsAccount {
 
   pub fn reset_name(&mut self) {
     self.name = None;
+  }
+
+  pub fn set_onboard_c_finished(&mut self, onboard_c_finished: bool) {
+    self.onboard_c_finished = Some(onboard_c_finished);
+  }
+
+  pub fn with_onboard_c_finished(mut self, onboard_c_finished: bool) -> ModelsAccount {
+    self.onboard_c_finished = Some(onboard_c_finished);
+    self
+  }
+
+  pub fn onboard_c_finished(&self) -> Option<&bool> {
+    self.onboard_c_finished.as_ref()
+  }
+
+  pub fn reset_onboard_c_finished(&mut self) {
+    self.onboard_c_finished = None;
   }
 
   pub fn set_onboard_q_answered(&mut self, onboard_q_answered: bool) {

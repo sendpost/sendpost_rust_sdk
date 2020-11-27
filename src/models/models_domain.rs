@@ -33,7 +33,9 @@ pub struct ModelsDomain {
   #[serde(rename = "track")]
   track: Option<::models::ModelsDnsRecord>,
   #[serde(rename = "trackVerified")]
-  track_verified: Option<bool>
+  track_verified: Option<bool>,
+  #[serde(rename = "verified")]
+  verified: Option<bool>
 }
 
 impl ModelsDomain {
@@ -48,7 +50,8 @@ impl ModelsDomain {
       return_path: None,
       return_path_verified: None,
       track: None,
-      track_verified: None
+      track_verified: None,
+      verified: None
     }
   }
 
@@ -220,6 +223,23 @@ impl ModelsDomain {
 
   pub fn reset_track_verified(&mut self) {
     self.track_verified = None;
+  }
+
+  pub fn set_verified(&mut self, verified: bool) {
+    self.verified = Some(verified);
+  }
+
+  pub fn with_verified(mut self, verified: bool) -> ModelsDomain {
+    self.verified = Some(verified);
+    self
+  }
+
+  pub fn verified(&self) -> Option<&bool> {
+    self.verified.as_ref()
+  }
+
+  pub fn reset_verified(&mut self) {
+    self.verified = None;
   }
 
 }

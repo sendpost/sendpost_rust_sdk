@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**domain_router_get_all**](SubaccountdomainApi.md#domain_router_get_all) | **Get** /subaccount/domain/ | 
 [**domain_router_update**](SubaccountdomainApi.md#domain_router_update) | **Put** /subaccount/domain/{domainId} | 
 [**domain_router_verify**](SubaccountdomainApi.md#domain_router_verify) | **Post** /subaccount/domain/{domainId}/verify | 
+[**domain_router_verify_by_token**](SubaccountdomainApi.md#domain_router_verify_by_token) | **Post** /subaccount/domain/{domainId}/verify/email/{token} | 
+[**domain_router_verify_request**](SubaccountdomainApi.md#domain_router_verify_request) | **Post** /subaccount/domain/{domainId}/verify/email | 
 
 
 # **domain_router_count**
@@ -207,6 +209,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**::models::ModelsDomain**](models.Domain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **domain_router_verify_by_token**
+> ::models::ModelsDomain domain_router_verify_by_token(x_sub_account_api_key, domain_id, token)
+
+
+Verify Domain By Signed Token
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **x_sub_account_api_key** | **String**| Sub-Account API Key | 
+  **domain_id** | **i64**| the DomainId you want to get | 
+  **token** | **String**| The signed token used to verify | 
+
+### Return type
+
+[**::models::ModelsDomain**](models.Domain.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **domain_router_verify_request**
+> domain_router_verify_request(x_sub_account_api_key, domain_id, body)
+
+
+Verify Domain By Email Request
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+  **x_sub_account_api_key** | **String**| Sub-Account API Key | 
+  **domain_id** | **i64**| the DomainId you want to get | 
+  **body** | [**ModelsVerifyByTokenRequest**](ModelsVerifyByTokenRequest.md)| The Email to be used to verify | 
+
+### Return type
+
+ (empty response body)
 
 ### Authorization
 
